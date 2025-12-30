@@ -42,7 +42,7 @@ A three-tier platform featuring AI-powered spam detection, facial recognition ve
 
 | 📱 Mobile App | 💻 Admin Panel |
 |:---:|:---:|
-| <img src="https://via.placeholder.com/300x600/4F46E5/FFFFFF?text=Mobile+App" alt="Mobile App" width="250"/> | <img src="https://via.placeholder.com/600x400/4F46E5/FFFFFF?text=Admin+Panel" alt="Admin Panel" width="400"/> |
+| <img src="https://via.placeholder.com/300x600/4F46E5/FFFFFF?text=Mobile+App" alt="Mobile App" width="250"/> | <img src="image.png" alt="Admin Panel" width="400"/> |
 | *Browse & Chat with Verified Owners* | *AI-Powered Verification Center* |
 
 </div>
