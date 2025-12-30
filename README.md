@@ -1,96 +1,197 @@
-# Rentro - Trust-Centered Rental Platform
+<div align="center">
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React Native](https://img.shields.io/badge/React_Native-v0.72-blue)
-![Expo](https://img.shields.io/badge/Expo-v49.0-black)
-![Firebase](https://img.shields.io/badge/Firebase-9.0-orange)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC)
-![Node.js](https://img.shields.io/badge/Node.js-18.0-green)
+# 🏠 Rentro
 
-A complete, production-ready rental ecosystem with AI-powered trust verification, built entirely with **FREE** resources.
+### Trust-Centered Rental Platform with AI-Powered Verification
 
-## 📸 Screenshots
+*Building trust in rentals, one verification at a time*
 
-| Mobile App | Admin Panel |
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React Native](https://img.shields.io/badge/React_Native-0.72-61DAFB?logo=react)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-49.0-000020?logo=expo)](https://expo.dev/)
+[![Firebase](https://img.shields.io/badge/Firebase-9.0-FFCA28?logo=firebase)](https://firebase.google.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-18.0-339933?logo=node.js)](https://nodejs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+
+[Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Documentation](#-documentation) • [Deployment](#-deployment)
+
+---
+
+</div>
+
+## 🌟 What is Rentro?
+
+Rentro is a **production-ready rental ecosystem** that revolutionizes trust and safety in property rentals through AI-powered verification systems. Built entirely with **FREE** resources, it combines cutting-edge AI with seamless user experience across mobile and web platforms.
+
+### 🎯 The Problem We Solve
+
+- 🚫 Fake property listings and scams
+- 🤔 Unverified landlords and tenants
+- 💬 Poor communication channels
+- ⏰ Slow manual verification processes
+
+### ✨ Our Solution
+
+A three-tier platform featuring AI-powered spam detection, facial recognition verification, real-time chat, and comprehensive admin controls—all running on free-tier services.
+
+---
+
+## 🎨 Screenshots
+
+<div align="center">
+
+| 📱 Mobile App | 💻 Admin Panel |
 |:---:|:---:|
-| ![Mobile App](https://via.placeholder.com/300x600?text=Mobile+App+Screenshot) | ![Admin Panel](https://via.placeholder.com/600x400?text=Admin+Panel+Screenshot) |
-| *Tenant Feed & Owner Listings* | *Dashboard & Verification Center* |
+| <img src="https://via.placeholder.com/300x600/4F46E5/FFFFFF?text=Mobile+App" alt="Mobile App" width="250"/> | <img src="https://via.placeholder.com/600x400/4F46E5/FFFFFF?text=Admin+Panel" alt="Admin Panel" width="400"/> |
+| *Browse & Chat with Verified Owners* | *AI-Powered Verification Center* |
 
-## 🎯 Project Overview
+</div>
 
-**Rentro** is a rental platform that prioritizes trust and safety through AI-powered verification systems. The platform consists of three main components:
+---
 
-1. **Mobile App** (React Native + Expo) - For tenants and property owners
-2. **Web Admin Panel** (React + Vite + Tailwind) - For administrators
-3. **AI Backend** (Node.js + Express + Hugging Face) - Trust & safety analysis
+## ⚡ Features
 
-### Key Features
+<table>
+<tr>
+<td width="50%">
 
-✅ **Dual-Role Mobile App** - Seamless tenant/owner experience  
-✅ **AI-Powered Spam Detection** - Analyses property descriptions  
-✅ **Face Verification** - Matches ID cards with live selfies  
-✅ **Real-time Chat** - Firestore-powered messaging  
-✅ **Admin Verification Center** - Side-by-side ID review  
-✅ **100% Free Resources** - Firebase, Hugging Face, Render.com  
+### 📱 Mobile App
+- 🏘️ **Dual Role System** - Switch between tenant/owner modes
+- 🔍 **Smart Search** - Filter by location, price, BHK
+- 💬 **Real-time Chat** - Instant messaging with property owners
+- ❤️ **Wishlist** - Save your favorite properties
+- ⭐ **Reviews** - Rate and review properties
+- 📸 **Multi-image Upload** - Showcase properties beautifully
+
+</td>
+<td width="50%">
+
+### 🖥️ Admin Panel
+- 📊 **Analytics Dashboard** - Real-time stats and metrics
+- ✅ **Verification Center** - Side-by-side ID review
+- 🤖 **AI Spam Detection** - Automated listing analysis
+- 👥 **User Management** - Ban, unban, reset verifications
+- 🏢 **Property Queue** - Approve/reject listings
+- 📈 **Growth Tracking** - Monitor platform growth
+
+</td>
+</tr>
+</table>
+
+### 🤖 AI-Powered Intelligence
+
+<details>
+<summary><b>🛡️ VeriSentry - Trust & Safety Agent</b></summary>
+
+- **Spam Detection**: Analyzes property descriptions for scam patterns
+- **Image Verification**: Matches property photos with descriptions
+- **Face Recognition**: Compares ID cards with live selfies
+- **Trust Scoring**: Assigns 0-100 trust scores to users
+
+</details>
+
+<details>
+<summary><b>💡 HelpBot - Support Assistant</b></summary>
+
+- **Auto-responses**: Handles common queries 24/7
+- **Sentiment Analysis**: Detects frustrated users
+- **Escalation**: Flags urgent issues for admins
+- **Multi-lingual**: Supports multiple languages
+
+</details>
 
 ---
 
 ## 🏗️ Architecture
 
+```mermaid
+graph TB
+    A[Mobile App<br/>React Native + Expo] -->|REST API| B[AI Backend<br/>Node.js + Express]
+    A -->|Authentication| C[Firebase Auth]
+    A -->|Database| D[Firestore]
+    A -->|Storage| E[Firebase Storage]
+    F[Admin Panel<br/>React + Vite] -->|REST API| B
+    F -->|Authentication| C
+    F -->|Database| D
+    B -->|AI Models| G[Hugging Face API]
+    
+    style A fill:#4F46E5,stroke:#333,stroke-width:2px,color:#fff
+    style F fill:#4F46E5,stroke:#333,stroke-width:2px,color:#fff
+    style B fill:#10B981,stroke:#333,stroke-width:2px,color:#fff
+    style C fill:#F59E0B,stroke:#333,stroke-width:2px
+    style D fill:#F59E0B,stroke:#333,stroke-width:2px
+    style E fill:#F59E0B,stroke:#333,stroke-width:2px
+    style G fill:#EF4444,stroke:#333,stroke-width:2px,color:#fff
+```
+
+### 📁 Project Structure
+
 ```
 Rentro application/
-├── rentro-backend/           # AI Wrapper Service (Node.js + Express)
-│   ├── server.js            # Main server with 4 AI endpoints
+├── 🎯 rentro-backend/              # AI Wrapper Service
+│   ├── server.js                   # Express server with 4 AI endpoints
 │   ├── package.json
 │   └── .env.example
 │
-├── rentro-mobile/           # Mobile App (React Native + Expo)
+├── 📱 rentro-mobile/               # React Native + Expo App
 │   ├── app/
-│   │   ├── (auth)/         # Login & Signup
-│   │   ├── (tenant)/       # Property feed, search, chat
-│   │   ├── (owner)/        # Add listing, verification
-│   │   └── _layout.tsx     # Root navigation
+│   │   ├── (auth)/                 # Login & Signup screens
+│   │   ├── (tenant)/               # Tenant experience
+│   │   ├── (owner)/                # Owner dashboard
+│   │   └── _layout.tsx             # Root navigation
 │   ├── firebaseConfig.js
 │   └── app.json
 │
-├── rentro-admin/            # Web Admin Panel (React + Vite)
+├── 💻 rentro-admin/                # Web Admin Panel
 │   ├── src/
-│   │   ├── pages/          # Dashboard, Verification, Properties
-│   │   ├── components/     # Sidebar, etc.
+│   │   ├── pages/                  # Dashboard, Verification, Properties
+│   │   ├── components/             # Reusable UI components
 │   │   └── config/firebase.js
 │   └── tailwind.config.js
 │
-└── shared/                  # Shared utilities
+└── 🔧 shared/                      # Shared utilities
     ├── firebaseConfig.js
     └── constants.js
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- **Node.js** 18+ and npm
-- **Android Studio** (for mobile testing)
-- **Firebase Account** (free tier)
-- **Hugging Face Account** (free API key)
+```bash
+✅ Node.js 18+ and npm
+✅ Android Studio (for mobile testing)
+✅ Firebase Account (free tier)
+✅ Hugging Face Account (free API key)
+```
 
-### Step 1: Clone & Setup
+### ⚙️ Installation
+
+<details open>
+<summary><b>Step 1: Clone Repository</b></summary>
 
 ```bash
 cd "Rentro application"
 ```
 
-### Step 2: Firebase Configuration
+</details>
+
+<details>
+<summary><b>Step 2: Firebase Setup</b></summary>
 
 1. Go to [Firebase Console](https://console.firebase.google.com/)
-2. The project is already configured with your credentials
-3. Enable **Email/Password** authentication in Firebase Console
-4. Create Firestore database (start in test mode, we'll add rules later)
-5. Enable Firebase Storage
+2. Create a new project (or use existing)
+3. Enable **Authentication** → Email/Password
+4. Create **Firestore Database** (test mode initially)
+5. Enable **Storage**
+6. Copy your config and update `firebaseConfig.js` files
 
-### Step 3: Backend Setup
+</details>
+
+<details>
+<summary><b>Step 3: Backend Setup</b></summary>
 
 ```bash
 cd rentro-backend
@@ -98,16 +199,15 @@ cd rentro-backend
 # Install dependencies
 npm install
 
-# Configure environment
+# Setup environment variables
 cp .env.example .env
-# Edit .env and add your Hugging Face API key
-# Get it from: https://huggingface.co/settings/tokens
+# Add your Hugging Face API key: https://huggingface.co/settings/tokens
 
 # Start development server
 npm run dev
 ```
 
-The backend will run on `http://localhost:5000`
+✅ Backend running on `http://localhost:5000`
 
 **API Endpoints:**
 - `POST /api/analyze-listing` - Spam detection
@@ -115,188 +215,117 @@ The backend will run on `http://localhost:5000`
 - `POST /api/verify-face` - Face matching
 - `POST /api/chat-bot` - Support chatbot
 
-### Step 4: Mobile App Setup
+</details>
+
+<details>
+<summary><b>Step 4: Mobile App Setup</b></summary>
 
 ```bash
 cd ../rentro-mobile
 
-# Dependencies already installed
-# Start Expo development server
+# Start Expo
 npx expo start
 ```
 
-**To run on Android Emulator:**
-1. Start Android Studio emulator
-2. Press `a` in the Expo terminal
+**Run on Android Emulator:** Press `a` in terminal  
+**Run on Physical Device:** Scan QR code with Expo Go app
 
-**To run on physical device:**
-1. Install Expo Go app from Play Store
-2. Scan the QR code
+> 💡 **Important:** Update API URL in `app/(owner)/add-listing.tsx`
+> - Development: `http://YOUR_IP:5000`
+> - Android Emulator: `http://10.0.2.2:5000`
 
-**Important:** Update the API base URL in `app/(owner)/add-listing.tsx`:
-```javascript
-const API_BASE_URL = 'http://YOUR_IP_ADDRESS:5000'; // e.g., http://192.168.1.100:5000
-```
+</details>
 
-For Android emulator, use: `http://10.0.2.2:5000`
-
-### Step 5: Admin Panel Setup
+<details>
+<summary><b>Step 5: Admin Panel Setup</b></summary>
 
 ```bash
 cd ../rentro-admin
 
-# Dependencies already installed
 # Start development server
 npm run dev
 ```
 
-The admin panel will run on `http://localhost:5173`
+✅ Admin panel running on `http://localhost:5173`
+
+**Default Admin Credentials:**  
+Create an account and manually set `role: 'admin'` in Firestore
+
+</details>
 
 ---
 
-## 📱 Mobile App Features
+## 📚 Documentation
 
-### For Tenants:
-- **Home Feed** - Browse verified properties
-- **Search & Filters** - Find properties by location, price, BHK
-- **Property Details** - View images, amenities, owner info
-- **Real-time Chat** - Message property owners
-- **Wishlist** - Save favorite properties
-- **Reviews** - Rate and review properties
+### 🔥 Firestore Schema
 
-### For Owners:
-- **Add Listing** - Multi-step form with image upload
-- **AI Pre-Check** - Real-time spam detection
-- **Verification** - Upload ID + selfie for trust badge
-- **Dashboard** - Manage listings and booking requests
-- **Chat** - Respond to tenant inquiries
+<details>
+<summary><b>users/{uid}</b></summary>
 
----
-
-## 💼 Admin Panel Features
-
-### Dashboard
-- Total users, verifications, and listings stats
-- Recent activity feed
-- Growth charts
-
-### Verification Center
-- **Side-by-side ID/Selfie viewer**
-- AI face match score display
-- One-click approve/reject
-- Updates user trust score automatically
-
-### Property Queue
-- Review pending listings
-- View AI spam scores
-- Flag suspicious content
-- Approve/reject with reasons
-
-### User Management
-- View all users
-- Ban/unban users
-- Reset verifications
-
----
-
-## 🤖 AI Agents
-
-### VeriSentry (Trust & Safety)
-
-**1. Spam Detection**
-- Model: `distilbert-base-uncased-finetuned-sst-2-english`
-- Detects: Scam keywords, phone numbers, excessive caps
-- Score: 0-100 (higher = more suspicious)
-
-**2. Image Analysis**
-- Model: `Salesforce/blip-image-captioning-base`
-- Generates captions for property images
-- Matches captions with descriptions
-
-**3. Face Verification**
-- Compares ID photo with selfie
-- Returns match confidence (0-100%)
-
-### HelpBot (Support Assistant)
-
-- Model: `google/flan-t5-base`
-- Auto-responds to common questions
-- Escalates negative sentiment to admins
-- Detects urgent keywords (fraud, harassment)
-
----
-
-## 🔥 Firebase Firestore Schema
-
-### users/{uid}
 ```javascript
 {
-  email: string,
-  name: string,
-  phone: string,
-  role: 'tenant' | 'owner' | 'admin',
-  isVerified: boolean,
-  trustScore: number,         // 0-100
+  email: "user@example.com",
+  name: "John Doe",
+  phone: "+1234567890",
+  role: "tenant" | "owner" | "admin",
+  isVerified: false,
+  trustScore: 0,              // 0-100
   createdAt: timestamp
 }
 ```
 
-### properties/{propId}
+</details>
+
+<details>
+<summary><b>properties/{propId}</b></summary>
+
 ```javascript
 {
-  ownerId: string,
-  title: string,
-  description: string,
-  price: number,
-  city: string,
-  location: { address, lat, lng },
-  images: string[],           // Firebase Storage URLs
-  amenities: string[],
-  type: 'apartment' | 'house' | 'room',
-  bhk: number,
-  status: 'pending' | 'verified' | 'rejected',
+  ownerId: "uid_123",
+  title: "2BHK Apartment in Downtown",
+  description: "Spacious apartment...",
+  price: 15000,
+  city: "New York",
+  location: { 
+    address: "123 Main St",
+    lat: 40.7128,
+    lng: -74.0060 
+  },
+  images: ["url1", "url2"],
+  amenities: ["WiFi", "Parking", "Gym"],
+  type: "apartment",
+  bhk: 2,
+  status: "pending" | "verified" | "rejected",
   aiAnalysis: {
-    spamScore: number,
-    imageMatch: boolean,
-    flags: string[]
+    spamScore: 25,
+    imageMatch: true,
+    flags: []
   },
   createdAt: timestamp
 }
 ```
 
-### verifications/{reqId}
+</details>
+
+<details>
+<summary><b>verifications/{reqId}</b></summary>
+
 ```javascript
 {
-  userId: string,
-  idCardUrl: string,          // Firebase Storage URL
-  selfieUrl: string,          // Firebase Storage URL
-  status: 'pending' | 'approved' | 'rejected',
-  aiFaceMatchScore: number,   // 0-100
+  userId: "uid_123",
+  idCardUrl: "storage_url",
+  selfieUrl: "storage_url",
+  status: "pending" | "approved" | "rejected",
+  aiFaceMatchScore: 87.5,     // 0-100
   submittedAt: timestamp,
   reviewedAt: timestamp,
-  reviewedBy: string
+  reviewedBy: "admin_uid"
 }
 ```
 
-### chats/{chatId}
-```javascript
-{
-  participants: [uid1, uid2],
-  lastMessage: string,
-  updatedAt: timestamp,
-  
-  // Subcollection: messages/{msgId}
-  messages: {
-    senderId: string,
-    content: string,
-    timestamp: timestamp
-  }
-}
-```
+</details>
 
----
-
-## 🔒 Firebase Security Rules
+### 🔒 Security Rules
 
 Add these rules to your Firestore:
 
@@ -304,7 +333,6 @@ Add these rules to your Firestore:
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Users can read their own data and create new accounts
     match /users/{userId} {
       allow read: if request.auth != null;
       allow create: if request.auth.uid == userId;
@@ -312,27 +340,21 @@ service cloud.firestore {
                       get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
     }
     
-    // Properties are public for reading, owners can create
     match /properties/{propertyId} {
       allow read: if true;
-      allow create: if request.auth != null && 
-                      request.resource.data.ownerId == request.auth.uid;
+      allow create: if request.auth != null;
       allow update: if request.auth.uid == resource.data.ownerId ||
                       get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
     }
     
-    // Verifications - users can create, admins can update
     match /verifications/{verificationId} {
       allow read: if request.auth != null;
-      allow create: if request.auth != null && 
-                      request.resource.data.userId == request.auth.uid;
+      allow create: if request.auth.uid == request.resource.data.userId;
       allow update: if get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
     }
     
-    // Chats - only participants can access
     match /chats/{chatId} {
-      allow read, write: if request.auth != null && 
-                           request.auth.uid in resource.data.participants;
+      allow read, write: if request.auth.uid in resource.data.participants;
     }
   }
 }
@@ -340,24 +362,18 @@ service cloud.firestore {
 
 ---
 
-## 📦 Deployment
+## 🚀 Deployment
 
-### Backend (Render.com - Free Tier)
+### Backend → Render.com (Free)
 
 1. Push code to GitHub
-2. Go to [Render.com](https://render.com)
-3. Create new **Web Service**
-4. Connect repository
-5. **Build Command:** `cd rentro-backend && npm install`
-6. **Start Command:** `cd rentro-backend && npm start`
-7. Add environment variable: `HUGGINGFACE_API_KEY`
-8. Deploy!
+2. Create Web Service on [Render.com](https://render.com)
+3. **Build Command:** `cd rentro-backend && npm install`
+4. **Start Command:** `cd rentro-backend && npm start`
+5. Add environment: `HUGGINGFACE_API_KEY`
+6. Deploy! 🎉
 
-Your backend URL will be: `https://your-app.onrender.com`
-
-Update mobile app and admin URLs to use this.
-
-### Mobile App (EAS Build)
+### Mobile App → EAS Build
 
 ```bash
 cd rentro-mobile
@@ -365,142 +381,154 @@ cd rentro-mobile
 # Install EAS CLI
 npm install -g eas-cli
 
-# Login to Expo
-eas login
-
-# Configure project
-eas build:configure
-
-# Build APK for Android
+# Build APK
 eas build --platform android --profile preview
 ```
 
-Download the APK and install on Android devices.
-
-### Admin Panel (Vercel - Free Tier)
+### Admin Panel → Vercel (Free)
 
 ```bash
 cd rentro-admin
 
-# Install Vercel CLI
-npm install -g vercel
-
 # Deploy
-vercel
+npx vercel
 
-# Production deployment
-vercel --prod
+# Production
+npx vercel --prod
 ```
 
-Or connect repository to Vercel dashboard for auto-deployment.
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+| Category | Technologies |
+|:--------:|:-------------|
+| **Frontend** | React Native, Expo, React, Vite, Tailwind CSS |
+| **Backend** | Node.js, Express.js |
+| **Database** | Firebase Firestore, Firebase Storage |
+| **AI/ML** | Hugging Face (BLIP, DistilBERT, FLAN-T5) |
+| **Deployment** | Render.com, Vercel, EAS Build |
+| **Authentication** | Firebase Auth |
+
+</div>
 
 ---
 
-## 🎨 Design & UI
+## 🎯 Roadmap
 
-**Mobile App:**
-- Modern card-based design
-- Primary color: Indigo (#4F46E5)
-- Clean, minimal interface
-- Smooth transitions
-- Loading states everywhere
+### ✅ Current Features (MVP)
+- [x] User authentication
+- [x] Property listings
+- [x] AI spam detection
+- [x] Face verification
+- [x] Real-time chat
+- [x] Admin panel
 
-**Admin Panel:**
-- Tailwind CSS utility-first
-- Responsive sidebar
-- Data tables with actions
-- Color-coded AI scores:
-  - Green: < 30 (safe)
-  - Yellow: 30-60 (moderate)
-  - Red: > 60 (suspicious)
-
----
-
-## 🚨 Known Limitations (MVP)
-
-1. **Hugging Face Rate Limits** - Free tier has ~1000 requests/day
-2. **Face Verification** - Uses simplified logic (upgrade for production)
-3. **Maps Integration** - Not implemented (add React Native Maps)
-4. **Push Notifications** - Not configured (use Firebase Cloud Messaging)
-5. **Payment Gateway** - Not implemented
-6. **Advanced Search** - Basic filters only
+### 🔜 Coming Soon
+- [ ] Push notifications
+- [ ] Google Maps integration
+- [ ] Payment gateway (Stripe/Razorpay)
+- [ ] Advanced search with Algolia
+- [ ] Email notifications
+- [ ] Reviews & ratings system
+- [ ] Booking management
+- [ ] Analytics dashboard
 
 ---
 
-## 🔧 Troubleshooting
+## ⚠️ Known Limitations
 
-### Backend not connecting
-- Check if backend is running on correct port
-- Update mobile app API URL to your machine's IP
-- For Android emulator, use `10.0.2.2:5000`
+> 🚧 **MVP Version** - Some features are simplified for rapid deployment
 
-### Expo app not loading
-- Clear Metro bundler cache: `npx expo start -c`
-- Check firebaseConfig.js is correct
-- Ensure all dependencies installed
-
-### Admin panel blank screen
-- Check browser console for errors
-- Verify Firebase config in src/config/firebase.js
-- Run `npm run build` to check for build errors
-
-### Firebase permission denied
-- Update Firestore Security Rules (see above)
-- Check user is authenticated
-- Verify document paths are correct
+- **Hugging Face Rate Limits**: Free tier ~1000 requests/day
+- **Face Verification**: Simplified algorithm (upgrade for production)
+- **Maps**: Not integrated yet
+- **Push Notifications**: Not configured
+- **Payments**: Not implemented
 
 ---
 
-## 📞 Support
+## 🐛 Troubleshooting
 
-For issues or questions:
-1. Check Firestore data structure
-2. Check browser/mobile console logs
-3. Verify all environment variables are set
-4. Ensure Firebase services are enabled
+<details>
+<summary><b>Backend not connecting</b></summary>
+
+- ✅ Check backend is running on correct port
+- ✅ Update mobile API URL to your machine's IP
+- ✅ For Android emulator, use `10.0.2.2:5000`
+
+</details>
+
+<details>
+<summary><b>Expo app not loading</b></summary>
+
+- ✅ Clear cache: `npx expo start -c`
+- ✅ Verify `firebaseConfig.js` is correct
+- ✅ Check all dependencies are installed
+
+</details>
+
+<details>
+<summary><b>Firebase permission denied</b></summary>
+
+- ✅ Update Firestore Security Rules
+- ✅ Check user is authenticated
+- ✅ Verify document paths
+
+</details>
 
 ---
 
-## 🎉 Next Steps
+## 💰 Cost Breakdown
 
-After MVP is working:
-
-1. **Add Firebase Security Rules** (see above)
-2. **Configure Push Notifications**
-3. **Integrate Google Maps** for property locations
-4. **Add Payment Gateway** (Razorpay/Stripe)
-5. **Implement Reviews & Ratings system**
-6. **Add Booking Management**
-7. **Create Mobile Responsive Admin Panel**
-8. **Add Analytics Dashboard** (Firebase Analytics)
-9. **Implement Advanced Search** with Algolia
-10. **Add Email Notifications** (SendGrid/Mailgun)
+| Service | Tier | Monthly Cost |
+|:--------|:-----|:-------------|
+| Firebase | Spark (Free) | **$0.00** |
+| Hugging Face | Free | **$0.00** |
+| Render.com | Free | **$0.00** |
+| Vercel | Hobby | **$0.00** |
+| **Total** | | **$0.00** ✨ |
 
 ---
 
 ## 📄 License
 
-MIT License - Feel free to use for learning and commercial projects.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Built With
+## 🤝 Contributing
 
-- **React Native** - Mobile framework
-- **Expo** - Development platform
-- **Firebase** - Backend & Database (FREE)
-- **Hugging Face** - AI Models (FREE)
-- **Tailwind CSS** - Styling
-- **Node.js + Express** - Backend API
-- **Vite** - Build tool
-- **Render.com** - Hosting (FREE)
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-**Total Cost: $0.00** ✅
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-## 👥 Contributors
+## 📞 Support
 
-Built as a production-ready MVP for trust-centered rental platforms.
+Need help? Here's how to get support:
 
-**Happy Renting! 🏠**
+- 📧 Email: anuragwaskle2022@gmail.com
+
+<div align="center">
+
+### 🌟 Star us on GitHub!
+
+If you find Rentro helpful, please consider giving it a star ⭐
+
+**Built with ❤️ for safer rentals**
+
+---
+
+Made with ☕ and 💻 by the Rentro Team
+
+[⬆ Back to Top](#-rentro)
+
+</div>
