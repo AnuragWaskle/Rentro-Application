@@ -527,7 +527,7 @@ If you find Rentro helpful, please consider giving it a star ⭐
 
 ---
 
-Made with ☕ and 💻 by the Rentro Team
+Made with ☕ and 💻 by the Anurag Waskle
 
 [⬆ Back to Top](#-rentro)
 
