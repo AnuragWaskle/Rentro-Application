@@ -450,36 +450,6 @@ npx vercel --prod
 
 ---
 
-## 🐛 Troubleshooting
-
-<details>
-<summary><b>Backend not connecting</b></summary>
-
-- ✅ Check backend is running on correct port
-- ✅ Update mobile API URL to your machine's IP
-- ✅ For Android emulator, use `10.0.2.2:5000`
-
-</details>
-
-<details>
-<summary><b>Expo app not loading</b></summary>
-
-- ✅ Clear cache: `npx expo start -c`
-- ✅ Verify `firebaseConfig.js` is correct
-- ✅ Check all dependencies are installed
-
-</details>
-
-<details>
-<summary><b>Firebase permission denied</b></summary>
-
-- ✅ Update Firestore Security Rules
-- ✅ Check user is authenticated
-- ✅ Verify document paths
-
-</details>
-
----
 
 ## 💰 Cost Breakdown
 
